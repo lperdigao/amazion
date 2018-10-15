@@ -8,6 +8,7 @@ public class AmazionPackage {
 	private String name;
 	private String description;
 	private List<Product> products;
+	private Integer price;
 
 	public String getId() {
 		return id;
@@ -39,6 +40,11 @@ public class AmazionPackage {
 
 	public void setProducts(List<Product> products) {
 		this.products = products;
+		calculatePrice(products);
+	}
+
+	private void calculatePrice(List<Product> products) {
+		this.price = products.stream().mapToInt(p -> p.getUsdPrice()).sum();
 	}
 
 }
