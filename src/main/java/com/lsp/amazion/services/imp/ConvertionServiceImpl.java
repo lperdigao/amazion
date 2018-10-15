@@ -10,7 +10,6 @@ import java.text.MessageFormat;
 import java.util.Map;
 import java.util.logging.Logger;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,14 +22,11 @@ import com.lsp.amazion.services.api.ConvertionService;
 public class ConvertionServiceImpl implements ConvertionService {
 
 	private static final Logger LOGGER = Logger.getLogger(ConvertionServiceImpl.class.getName());
+
+	@Value("${fixer.apikey}")
 	private String fixerApiKey;
 
 	private static String apiRequestUrl = "http://data.fixer.io/api/latest?access_key={0}&from={1}";
-
-	@Autowired
-	ConvertionServiceImpl(@Value("${fixer.apikey}") final String fixerApiKey) {
-		this.fixerApiKey = fixerApiKey;
-	}
 
 	public double convert(double value, String from, String to) throws IOException {
 		Map<String, Double> rates = fetchNewRates(from).getRates();
