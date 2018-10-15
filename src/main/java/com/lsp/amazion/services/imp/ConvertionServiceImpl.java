@@ -25,8 +25,6 @@ public class ConvertionServiceImpl implements ConvertionService {
 	private static final Logger LOGGER = Logger.getLogger(ConvertionServiceImpl.class.getName());
 	private String fixerApiKey;
 
-	// private static String apiRequestUrl = "http://data.fixer.io/api/convert?"
-	// + "access_key={0}&from={1}&to={2}&amount={3}";
 	private static String apiRequestUrl = "http://data.fixer.io/api/latest?access_key={0}&from={1}";
 
 	@Autowired
