@@ -26,16 +26,20 @@ public class ConvertionServiceImpl implements ConvertionService {
 	@Value("${fixer.apikey}")
 	private String fixerApiKey;
 
-	private static String apiRequestUrl = "http://data.fixer.io/api/latest?access_key={0}&from={1}";
+	private static String apiRequestUrl = "http://data.fixer.io/api/latest?access_key={0}";
 
 	public double convert(double value, String from, String to) throws IOException {
 		Map<String, Double> rates = fetchNewRates(from).getRates();
-		Double rate = rates.get(to);
+		Double usdRate = rates.get("USD");
+		// 1 usd = x to
+		Double rate = 1 / (usdRate / rates.get(to));
 		return rate * value;
 	}
 
 	private FixerApiResponse fetchNewRates(String from) throws IOException {
-		String fixerRequestUrl = MessageFormat.format(apiRequestUrl, fixerApiKey, from);
+
+		String fixerRequestUrl = MessageFormat.format(apiRequestUrl, fixerApiKey);
+
 		URL url = new URL(fixerRequestUrl);
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 		connection.setRequestMethod(RequestMethod.GET.toString());
@@ -51,7 +55,6 @@ public class ConvertionServiceImpl implements ConvertionService {
 		rd.close();
 
 		ObjectMapper mapper = new ObjectMapper();
-		String jsonInString = "{'name' : 'mkyong'}";
 
 		// JSON from file to Object
 		return mapper.readValue(response.toString(), FixerApiResponse.class);

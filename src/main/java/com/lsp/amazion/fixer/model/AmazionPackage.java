@@ -44,7 +44,15 @@ public class AmazionPackage {
 	}
 
 	private void calculatePrice(List<Product> products) {
-		this.price = products.stream().mapToInt(p -> p.getUsdPrice()).sum();
+		this.setPrice(products.stream().mapToInt(p -> p.getUsdPrice()).sum());
+	}
+
+	public Integer getPrice() {
+		return price;
+	}
+
+	public void setPrice(Integer price) {
+		this.price = price;
 	}
 
 }

@@ -26,7 +26,8 @@ public class PackageManagementServiceImp implements PackageManagementService {
 
 	@Override
 	public AmazionPackage savePackage(AmazionPackage amazionPackage) {
-		return packages.put(amazionPackage.getId(), amazionPackage);
+		packages.put(amazionPackage.getId(), amazionPackage);
+		return amazionPackage;
 	}
 
 	@Override
