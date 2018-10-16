@@ -1,11 +1,20 @@
 # amazion
 
+How to run
+--------------------
+gradlew bootrun
 
-[issue 1] init project
-[issue 2] add converter service
-[issue 3] add rest endpoints
-[issue 4] presist packages in memory
+Properties file
+----------------
+src\main\resources\application.yml
 
+Tasks:
+
+- [issue 1] init project
+- [issue 2] add converter service
+- [issue 3] add rest endpoints
+- [issue 4] presist packages in memory
+- [issue 5] UI
 
 Examples:
 
