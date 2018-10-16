@@ -23,6 +23,10 @@ Tasks:
 - [issue 4] presist packages in memory
 - [issue 5] UI
 
+UI look:
+
+![alt text](https://github.com/lperdigao/amazion/blob/develop/UI.png)
+
 Examples:
 
 Post
