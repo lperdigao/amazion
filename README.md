@@ -6,10 +6,10 @@ gradlew bootrun
 
 How to run UI
 --------------------
-cd UI/amazion
-npm install
-npm install -g @angular/cli
-ng serve --proxy-config proxy.conf.json
+- cd UI/amazion
+- npm install
+- npm install -g @angular/cli
+- ng serve --proxy-config proxy.conf.json
 
 Properties file
 ----------------
