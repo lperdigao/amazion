@@ -1,8 +1,13 @@
 # amazion
 
-How to run
+How to run backend
 --------------------
 gradlew bootrun
+
+How to run UI
+--------------------
+cd UI/amazion
+ng serve --proxy-config proxy.conf.json
 
 Properties file
 ----------------
