@@ -25,7 +25,7 @@ Tasks:
 
 UI look:
 
-![alt text](http://ui.png)
+![alt text](https://github.com/lperdigao/amazion/blob/develop/UI.png)
 
 Examples:
 
