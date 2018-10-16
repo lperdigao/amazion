@@ -1,0 +1,28 @@
+<h2>{{amazionPackage.name | uppercase}} Details</h2>
+<div><span>id: </span>{{amazionPackage.id}}</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="amazionPackage.name" placeholder="name">
+  </label>
+</div>
+<div><span>description: </span>{{amazionPackage.description}}</div>
+<div><span>products: </span>{{amazionPackage.products}}</div>
+<div><span>price: </span>{{amazionPackage.price}}</div>
+
+
+<h2>My Packages</h2>
+<ul class="packages">
+  <li *ngFor="let pack of packagesList">
+	  <h2>{{pack.name | uppercase}} Details</h2>
+	<div><span>id: </span>{{pack.id}}</div>
+	<div><span>name: </span>{{pack.name}}</div>
+	
+	<div><span>description: </span>{{pack.description}}</div>
+	<div><span>products: </span>
+		<li *ngFor="let prod of pack.products">
+			{{prod.id}}, {{prod.name}}, {{prod.usdPrice}} 
+		</li>
+	</div>
+	<div><span>price: </span>{{pack.price}}</div>
+  </li>
+</ul>

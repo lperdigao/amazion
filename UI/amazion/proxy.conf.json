@@ -1,0 +1,8 @@
+{
+  "/package*": {
+    "target":"http://tom:abc123@localhost:8080",
+    "secure": false,
+	"changeOrigin": true,
+    "logLevel": "info"
+  }
+}
